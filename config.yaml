@@ -1,0 +1,8 @@
+baseurl: hidehic0.github.io
+languageCode: ja
+title: hidehic0のブログ
+sidebar:
+  subtitle: "勉強記録とか色々書きます"
+  avatar:
+    local: false
+    src: "/img/avatar.png"
