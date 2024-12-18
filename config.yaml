@@ -1,8 +1,59 @@
 baseurl: hidehic0.github.io
 languageCode: ja
+DefaultContentLanguage: ja
+
 title: hidehic0のブログ
-sidebar:
-  subtitle: "勉強記録とか色々書きます"
-  avatar:
-    local: false
-    src: "/img/avatar.png"
+
+theme: hugo-theme-stack
+disqusShortname: hugo-theme-stack
+
+params:
+  mainSections:
+    - post
+
+  dateFormat:
+    published: 2006年 1月 02日
+    lastUpdated: 2006年 1月 02日
+
+  sidebar:
+    subtitle: "中１不登校 AtCoder 緑色 Paiza S"
+    avatar:
+      local: false
+      src: "/img/avatar.png"
+
+  article:
+    math: true
+    toc: true
+    readingTime: false
+
+  widgets:
+    homepage:
+      - type: search
+      - type: archives
+        params:
+          limit: 5
+      - type: categories
+        params:
+          limit: 10
+      - type: tag-cloud
+        params:
+          limit: 10
+    page:
+      - type: toc
+
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: -100
+      params:
+        newTab: false
+        icon: home
+
+  social:
+    - identifier: github
+      name: Github
+      url: https://github.com/hidehic0/
+      params:
+        icon: brand-github
