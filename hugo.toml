@@ -3,5 +3,5 @@ languageCode = 'ja'
 languageName = 'Japanese'
 defaultContentLanguage = 'ja'
 hasCJKLanguage = true
-title = 'hidehic0のミニブログ'
+title = 'hidehic0のブログ'
 theme = 'ananke'
