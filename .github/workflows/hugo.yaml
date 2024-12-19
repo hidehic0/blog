@@ -15,20 +15,6 @@ jobs:
           submodules: true
           fetch-depth: 0
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: "20"
-          cache: npm
-
-      - name: install and build
-        run: |
-          npm ci
-          npm run build
-
-        env:
-          CI: true
-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
