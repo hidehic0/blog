@@ -18,7 +18,8 @@ params:
   sidebar:
     subtitle: "中１不登校 AtCoder 緑色 Paiza S"
     avatar:
-      local: true
+      local: false
+      enabled: true
       src: "/img/avatar.png"
 
   article:
