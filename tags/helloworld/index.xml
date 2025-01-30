@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Helloworld on hidehic0のブログ</title><link>https://hidehic0.github.io/tags/helloworld/</link><description>Recent content in Helloworld on hidehic0のブログ</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 16 Dec 2024 20:26:05 +0900</lastBuildDate><atom:link href="https://hidehic0.github.io/tags/helloworld/index.xml" rel="self" type="application/rss+xml"/><item><title>Helloworld</title><link>https://hidehic0.github.io/post/helloworld/</link><pubDate>Mon, 16 Dec 2024 20:26:05 +0900</pubDate><guid>https://hidehic0.github.io/post/helloworld/</guid><description>&lt;p>hogehoge
+&lt;strong>test&lt;/strong>&lt;/p>
+&lt;p>$$
+a = 1
+$$&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#39;hello world&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

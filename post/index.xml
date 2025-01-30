@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on hidehic0のブログ</title><link>https://hidehic0.github.io/post/</link><description>Recent content in Posts on hidehic0のブログ</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Thu, 02 Jan 2025 16:59:39 +0900</lastBuildDate><atom:link href="https://hidehic0.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>ABC333-Eを解いた</title><link>https://hidehic0.github.io/post/abc333_e/</link><pubDate>Thu, 02 Jan 2025 16:59:39 +0900</pubDate><guid>https://hidehic0.github.io/post/abc333_e/</guid><description>&lt;p>&lt;a class="link" href="https://atcoder.jp/contests/abc333/tasks/abc333_e" target="_blank" rel="noopener"
+>問題へのリンク&lt;/a>&lt;/p>
+&lt;h1 id="考察したこと">考察したこと
+&lt;/h1>&lt;p>使った場所は、必要になったら使うという貪欲で求めることが、できるので(公式解説の丸パクリ)あとは途中持っている&lt;strong>最大値&lt;/strong>の&lt;strong>最小値&lt;/strong>を求めるだけ
+そちらは、imos法で、できるためあとは、ポーションをstackで管理すれば、OK&lt;/p>
+&lt;p>計算量は$O(N)$となり全然間に合う、ていうか、現在の環境だと、間に合わないとおかしい&lt;/p>
+&lt;h1 id="acコード">ACコード
+&lt;/h1>&lt;p>ライブラリは抜粋してあります
+&lt;a class="link" href="https://github.com/hidehic0/library" target="_blank" rel="noopener"
+>ライブラリ全文&lt;/a>
+変数名がゴミすぎてすみません&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>N &lt;span style="color:#f92672">=&lt;/span> ii()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>data &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">0&lt;/span>] &lt;span style="color:#f92672">*&lt;/span> N
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>D &lt;span style="color:#f92672">=&lt;/span> defaultdict(list)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ans &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">0&lt;/span>] &lt;span style="color:#f92672">*&lt;/span> N
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>T &lt;span style="color:#f92672">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> range(N):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> t, x &lt;span style="color:#f92672">=&lt;/span> il()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> T&lt;span style="color:#f92672">.&lt;/span>append(t)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> t &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> D[x]&lt;span style="color:#f92672">.&lt;/span>append(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">elif&lt;/span> t &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> len(D[x]) &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> exit()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> data[D[x][&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>]] &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> data[i] &lt;span style="color:#f92672">-=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ans[D[x][&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>]] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> D[x]&lt;span style="color:#f92672">.&lt;/span>pop()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ns &lt;span style="color:#f92672">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> range(N):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> T[i] &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ns&lt;span style="color:#f92672">.&lt;/span>append(ans[i])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(max(list(accumulate(data))))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#f92672">*&lt;/span>ns)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="感想">感想
+&lt;/h1>&lt;p>novistepsでstackの問題として見つけたけど、面白かった&lt;/p></description></item><item><title>ABC369-Eを解いてみた</title><link>https://hidehic0.github.io/post/abc369_e/</link><pubDate>Thu, 19 Dec 2024 14:57:07 +0900</pubDate><guid>https://hidehic0.github.io/post/abc369_e/</guid><description>&lt;p>&lt;a class="link" href="https://atcoder.jp/contests/abc369/tasks/abc369_e" target="_blank" rel="noopener"
+>問題へのリンク&lt;/a>&lt;/p>
+&lt;h1 id="考察したこと">考察したこと
+&lt;/h1>&lt;p>普通に$N&amp;lt;=400$だから、普通に考えられるのは、ワーシャルフロイド法だなと思った。
+で橋を渡る部分は現在地を、取っておけば全然大丈夫だからこの部分はいい&lt;/p>
+&lt;p>ここで少し解説を見た、順列全探索を使用するみたい&lt;/p>
+&lt;p>あとはbit全探索使えばいいなと、思って実装したらACした。&lt;/p>
+&lt;h1 id="acコード">ACコード
+&lt;/h1>&lt;p>ライブラリは抜粋してあります&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>N, M &lt;span style="color:#f92672">=&lt;/span> il()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>G &lt;span style="color:#f92672">=&lt;/span> create_array2(N, N, INF)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>L &lt;span style="color:#f92672">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> range(N):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> G[i][i] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> _ &lt;span style="color:#f92672">in&lt;/span> [&lt;span style="color:#ae81ff">0&lt;/span>] &lt;span style="color:#f92672">*&lt;/span> M:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u, v, t &lt;span style="color:#f92672">=&lt;/span> il()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u &lt;span style="color:#f92672">-=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> v &lt;span style="color:#f92672">-=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> G[u][v] &lt;span style="color:#f92672">=&lt;/span> min(G[u][v], t)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> G[v][u] &lt;span style="color:#f92672">=&lt;/span> min(G[v][u], t)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> L&lt;span style="color:#f92672">.&lt;/span>append((u, v, t))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Q &lt;span style="color:#f92672">=&lt;/span> ii()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> k &lt;span style="color:#f92672">in&lt;/span> range(N):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> cur &lt;span style="color:#f92672">in&lt;/span> range(N):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> nxt &lt;span style="color:#f92672">in&lt;/span> range(N):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> G[cur][nxt] &lt;span style="color:#f92672">=&lt;/span> min(G[cur][nxt], G[cur][k] &lt;span style="color:#f92672">+&lt;/span> G[k][nxt])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">solve&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> K &lt;span style="color:#f92672">=&lt;/span> ii()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> B &lt;span style="color:#f92672">=&lt;/span> il(&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#f92672">=&lt;/span> INF
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> p &lt;span style="color:#f92672">in&lt;/span> permutations(B):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> bit &lt;span style="color:#f92672">in&lt;/span> range(&lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">&amp;lt;&amp;lt;&lt;/span> K):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ans &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> range(K):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> bit &lt;span style="color:#f92672">&amp;amp;&lt;/span> (&lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">&amp;lt;&amp;lt;&lt;/span> i):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ans &lt;span style="color:#f92672">+=&lt;/span> G[cur][L[p[i]][&lt;span style="color:#ae81ff">0&lt;/span>]] &lt;span style="color:#f92672">+&lt;/span> L[p[i]][&lt;span style="color:#ae81ff">2&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#f92672">=&lt;/span> L[p[i]][&lt;span style="color:#ae81ff">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ans &lt;span style="color:#f92672">+=&lt;/span> G[cur][L[p[i]][&lt;span style="color:#ae81ff">1&lt;/span>]] &lt;span style="color:#f92672">+&lt;/span> L[p[i]][&lt;span style="color:#ae81ff">2&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#f92672">=&lt;/span> L[p[i]][&lt;span style="color:#ae81ff">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ans &lt;span style="color:#f92672">+=&lt;/span> G[cur][N &lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#f92672">=&lt;/span> min(result, ans)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> result
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> _ &lt;span style="color:#f92672">in&lt;/span> [&lt;span style="color:#ae81ff">0&lt;/span>] &lt;span style="color:#f92672">*&lt;/span> Q:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(solve())
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="最後に">最後に
+&lt;/h1>&lt;p>これの部分問題、キーエンス2024のDみたいな感じだったな
+この場合ワーシャルフロイドで拡張したけど、順列全探索+bit全探索は結構出てくるんだなって思った&lt;/p></description></item><item><title>Helloworld</title><link>https://hidehic0.github.io/post/helloworld/</link><pubDate>Mon, 16 Dec 2024 20:26:05 +0900</pubDate><guid>https://hidehic0.github.io/post/helloworld/</guid><description>&lt;p>hogehoge
+&lt;strong>test&lt;/strong>&lt;/p>
+&lt;p>$$
+a = 1
+$$&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#39;hello world&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
