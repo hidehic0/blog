@@ -1,32 +1,25 @@
 baseurl: https://hidehic0.github.io
 languageCode: ja
 DefaultContentLanguage: ja
-
 title: hidehic0のブログ
-
 theme: hugo-theme-stack
 disqusShortname: hugo-theme-stack
-
 params:
   mainSections:
     - post
-
   dateFormat:
     published: 2006年 1月 02日
     lastUpdated: 2006年 1月 02日
-
   sidebar:
     subtitle: "中１不登校 AtCoder 緑色 Paiza S"
     avatar:
       local: false
       enabled: true
-      src: "/img/avatar.png"
-
+      src: "/blog/img/avatar.png"
   article:
     math: true
     toc: true
     readingTime: false
-
   widgets:
     homepage:
       - type: search
@@ -41,7 +34,6 @@ params:
           limit: 10
     page:
       - type: toc
-
 menu:
   main:
     - identifier: home
@@ -51,7 +43,6 @@ menu:
       params:
         newTab: false
         icon: home
-
   social:
     - identifier: github
       name: Github
