@@ -18,7 +18,7 @@ mexだから、sortedsetあればいいよな
 で普通にmexの実装をしてACした
 
 # ACコード
-何を血迷ったのか、C++で解いていた
+いつもpython使ってるけど気分で、C++で解いていた
 コンテスト中じゃなくて良かった
 ```cpp
 #include <bits/stdc++.h>
