@@ -20,6 +20,13 @@ params:
     math: true
     toc: true
     readingTime: false
+    comments:
+      enabled: true
+      provider: utterances
+      utterances:
+        repo: hidehic0/blog
+        issueTerm: pathname
+        label: Comment
   widgets:
     homepage:
       - type: search
