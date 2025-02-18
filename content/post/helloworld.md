@@ -15,3 +15,11 @@ $$
 ```py
 print('hello world')
 ```
+
+<script src="https://utteranc.es/client.js"
+        repo="hidehic0/blog"
+        issue-term="url"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>

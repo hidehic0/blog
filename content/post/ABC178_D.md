@@ -41,3 +41,13 @@ for i in range(len(dp)):
 
 print(ans)
 ```
+
+
+<script src="https://utteranc.es/client.js"
+        repo="hidehic0/blog"
+        issue-term="pathname"
+        label="Comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
