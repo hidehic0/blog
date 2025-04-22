@@ -5,6 +5,7 @@ title: hidehic0のブログ
 theme: hugo-theme-stack
 disqusShortname: hugo-theme-stack
 params:
+  favicon: "/blog/img/avatar.png"
   mainSections:
     - post
   dateFormat:
