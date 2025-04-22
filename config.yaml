@@ -56,3 +56,8 @@ menu:
       url: https://github.com/hidehic0/
       params:
         icon: brand-github
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+buildFuture: false
