@@ -79,3 +79,15 @@ for _ in [0] * Q:
 
 これの部分問題、キーエンス2024のDみたいな感じだったな
 この場合ワーシャルフロイドで拡張したけど、順列全探索+bit全探索は結構出てくるんだなって思った
+
+
+### コメント欄
+
+<script src="https://utteranc.es/client.js"
+        repo="hidehic0/blog"
+        issue-term="pathname"
+        label="Comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>

@@ -53,3 +53,15 @@ print(*ns)
 
 # 感想
 novistepsでstackの問題として見つけたけど、面白かった
+
+
+### コメント欄
+
+<script src="https://utteranc.es/client.js"
+        repo="hidehic0/blog"
+        issue-term="pathname"
+        label="Comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
