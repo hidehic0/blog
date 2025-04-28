@@ -57,6 +57,15 @@ menu:
       url: https://github.com/hidehic0/
       params:
         icon: brand-github
+related:
+  includeNewer: true
+  threshold: 60
+  toLower: false
+  indices:
+    - name: tags
+      weight: 100
+    - name: categories
+      weight: 200
 markup:
   goldmark:
     renderer:
