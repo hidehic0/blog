@@ -8,6 +8,8 @@ params:
   favicon: "/blog/img/avatar.png"
   mainSections:
     - post
+  featuredImageField: image
+  rssFullContent: true
   dateFormat:
     published: 2006年 1月 02日
     lastUpdated: 2006年 1月 02日
