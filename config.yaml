@@ -4,6 +4,9 @@ DefaultContentLanguage: ja
 title: hidehic0のブログ
 theme: hugo-theme-stack
 disqusShortname: hugo-theme-stack
+permalinks:
+  post: /p/:slug/
+  page: /:slug/
 params:
   favicon: "/blog/img/avatar.png"
   mainSections:
