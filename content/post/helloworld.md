@@ -16,6 +16,10 @@ $$
 print('hello world')
 ```
 
+{{< notice warning >}}
+This is a warning notice. Be warned!
+{{< /notice >}}
+
 <script src="https://utteranc.es/client.js"
         repo="hidehic0/blog"
         issue-term="url"

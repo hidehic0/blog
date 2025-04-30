@@ -2,7 +2,9 @@ baseurl: https://hidehic0.github.io
 languageCode: ja
 DefaultContentLanguage: ja
 title: hidehic0のブログ
-theme: hugo-theme-stack
+theme:
+  - hugo-theme-stack
+  - hugo-notice
 disqusShortname: hugo-theme-stack
 permalinks:
   post: /p/:slug/
