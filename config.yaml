@@ -83,4 +83,4 @@ markup:
     renderer:
       unsafe: true
 buildFuture: false
-enableRobotsTXT: true
+enableRobotsTXT: false
