@@ -11,4 +11,4 @@ registries:
 - type: standard
   ref: v4.368.0 # renovate: depName=aquaproj/aqua-registry
 packages:
-- name: gohugoio/hugo/hugo-extended@v0.147.3
+- name: gohugoio/hugo/hugo-extended@v0.147.6
