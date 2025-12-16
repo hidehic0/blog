@@ -84,3 +84,7 @@ markup:
       unsafe: true
 buildFuture: false
 enableRobotsTXT: false
+sitemap:
+  changefreq: day
+  priority: 0.5
+  filename: sitemap.xml
