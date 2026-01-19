@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /categories/
-Disallow: /tags/
+Allow: /
+
 Sitemap: https://hidehic0.github.io/blog/sitemap.xml
