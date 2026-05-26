@@ -1,5 +1,5 @@
 baseurl: https://hidehic0.github.io
-languageCode: ja
+# languageCode: ja
 DefaultContentLanguage: ja
 title: hidehic0のブログ
 theme:
@@ -19,7 +19,7 @@ params:
     published: 2006年 1月 02日
     lastUpdated: 2006年 1月 02日
   sidebar:
-    subtitle: "中2 AtCoder水/水 Paiza S"
+    subtitle: "中3 AtCoder青/水"
     avatar: https://github.com/hidehic0.png
   article:
     math: true
